@@ -1,0 +1,97 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Budget.Service.Api</name>
+    </assembly>
+    <members>
+        <member name="T:Budget.Service.Api.Consts">
+            <summary>
+            Константы
+            </summary>
+        </member>
+        <member name="F:Budget.Service.Api.Consts.ServiceTitle">
+            <summary>
+            Заголовок сервиса
+            </summary>
+        </member>
+        <member name="F:Budget.Service.Api.Consts.SwaggerRoutePrefix">
+            <summary>
+            Префикс в пути для swagger
+            </summary>
+        </member>
+        <member name="F:Budget.Service.Api.Consts.ApiTitle">
+            <summary>
+            Заголовок на странице swagger
+            </summary>
+        </member>
+        <member name="T:Budget.Service.Api.Extensions.MediatorExtensions">
+            <summary>
+            Расширения связанные с медиторами
+            </summary>
+        </member>
+        <member name="M:Budget.Service.Api.Extensions.MediatorExtensions.AddMediators(Microsoft.Extensions.DependencyInjection.IServiceCollection)">
+            <summary>
+            Добавление поддержки медаторов <see cref="T:Microsoft.Extensions.DependencyInjection.IServiceCollection" />
+            </summary>
+            <param name="services"><see cref="T:Microsoft.Extensions.DependencyInjection.IServiceCollection" /></param>
+        </member>
+        <member name="T:Budget.Service.Api.Extensions.SwaggerExtensions">
+            <summary>
+            Расширения связаннные с работой swagger
+            </summary>
+        </member>
+        <member name="M:Budget.Service.Api.Extensions.SwaggerExtensions.PrepareAndAddSwagger(Microsoft.Extensions.DependencyInjection.IServiceCollection)">
+            <summary>
+            Настройка и добавление Swagger в коллекцию <see cref="T:Microsoft.Extensions.DependencyInjection.IServiceCollection" />
+            </summary>
+            <param name="services"><see cref="T:Microsoft.Extensions.DependencyInjection.IServiceCollection" /></param>
+        </member>
+        <member name="T:Budget.Service.Api.Middlewares.ExceptionMiddleware">
+            <summary>
+            Обработка ошибок на среднем слое
+            </summary>
+        </member>
+        <member name="M:Budget.Service.Api.Middlewares.ExceptionMiddleware.#ctor(Microsoft.AspNetCore.Http.RequestDelegate,Microsoft.Extensions.Logging.ILogger{Budget.Service.Api.Middlewares.ExceptionMiddleware})">
+            <summary>
+            Конструктор <see cref="T:Budget.Service.Api.Middlewares.ExceptionMiddleware" />
+            </summary>
+            <param name="next">запрос</param>
+            <param name="logger">логирование</param>
+        </member>
+        <member name="M:Budget.Service.Api.Middlewares.ExceptionMiddleware.InvokeAsync(Microsoft.AspNetCore.Http.HttpContext)">
+            <summary>
+            Выполнение запросов
+            </summary>
+            <param name="context">контекст запроса</param>
+            <returns></returns>
+        </member>
+        <member name="M:Budget.Service.Api.Middlewares.ExceptionMiddleware.ReadFullExceptionAsync(System.Exception,System.Boolean)">
+            <summary>
+            Рекурсивная функция получения всех вложенных ошибок
+            </summary>
+            <param name="ex">верхняя ошибка</param>
+            <param name="isFirst">флаг нулевого уровня вложенности</param>
+            <returns>Дерево ошибок</returns>
+        </member>
+        <member name="T:Budget.Service.Api.Middlewares.ExceptionResponseContent">
+            <summary>
+            Модель данных для ответа на запросы с исключениями
+            </summary>
+        </member>
+        <member name="P:Budget.Service.Api.Middlewares.ExceptionResponseContent.ErrorMessage">
+            <summary>
+            Сообщение
+            </summary>
+        </member>
+        <member name="P:Budget.Service.Api.Middlewares.ExceptionResponseContent.StackTrace">
+            <summary>
+            Путь возникновения исключения
+            </summary>
+        </member>
+        <member name="P:Budget.Service.Api.Middlewares.ExceptionResponseContent.InnerException">
+            <summary>
+            Внутренние исключения
+            </summary>
+        </member>
+    </members>
+</doc>
